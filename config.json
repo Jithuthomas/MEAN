@@ -1,5 +1,5 @@
 {
-    "connectionString": "mongodb://localhost:27017/myproject",
+    "connectionString": "mongodb://uvj2vkivcix6m3e:BzfWq4yq4ZxLs2Tlpt4V@bdkihro6aacu6b0-mongodb.services.clever-cloud.com:27017/bdkihro6aacu6b0",
     "apiUrl": "http://localhost:3000/api",
     "secret": "REPLACE THIS WITH YOUR OWN SECRET, IT CAN BE ANY STRING"
 }
