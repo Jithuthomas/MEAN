@@ -1,0 +1,47 @@
+<h1>{{vm.header}}</h1>
+<div class="form-container">
+    <form method="post">
+        
+        <div ng-show=vm.cmpydiv>
+            <ul>
+                <li ng-repeat="x in vm.company"><a href="#" id={{x.id}} ng-click="vm.showEmp($event)">{{x.cmpyname}}</a>
+                </li>
+            </ul>
+        </div>
+        
+        <div ng-show=vm.empdiv>
+            <ul>
+                <li ng-repeat="x in vm.employee"><a href="#" id={{x.id}} ng-click="vm.showEmpdetails($event)">{{x.name}}</a>
+                </li>
+            </ul>
+           <a href="#"  ng-click="vm.initController()">Back To Company List</a> 
+        </div>
+        
+        <div  ng-show=vm.empdetailsdiv>
+        
+            <div class="form-group">
+            <label for="firstName">Name</label>
+            <input type="text" id="firstName" class="form-control" ng-model="vm.empdetails[0].name" required />
+            </div>
+            <div class="form-group">
+            <label for="firstName">Designation</label>
+            <input type="text" id="firstName" class="form-control" ng-model="vm.empdetails[0].designation" required />
+            </div>
+            <div class="form-group">
+            <label for="firstName">Company</label>
+                
+            <select id ="choice" class="form-control"
+                    data-ng-options="choice.cmpyname for choice in vm.company track by choice.id" ng-model="vm.empdetails[0].cmpyid"></select>
+                
+            <!-- <input type="text" id="firstName" class="form-control" ng-model="vm.empdetails[0].cmpyid" required /> -->
+            </div>
+            <div class="form-group">
+            <button class="btn btn-primary" ng-click="vm.saveEmp()">Save</button>
+            <button class="btn btn-danger" ng-click="vm.deleteEmp()">Delete</button>
+            </div>
+            <a href="#" id={{vm.empdetails[0].cmpyid}} ng-click="vm.showEmp($event)">Back To Employee List</a>
+            
+        </div>
+        
+    </form>
+</div>
